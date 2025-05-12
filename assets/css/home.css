@@ -15,11 +15,9 @@
     font-family: "Space Grotesk", sans-serif;
     /* font-optical-sizing: auto;
     font-style: normal; */
-
     scroll-behavior: smooth;
     
   }
-  
 
  
 .content-section {
@@ -244,11 +242,253 @@
 }
 
 
+/* //////////////////////////////////////// */
+
+
+
+/* ////////////////////case studies/////////////////////// */
+
+.container-cstd {
+  width: 100%;
+  margin: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+
+
+/* Case Study Cards Container */
+.case-studies {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  background-color: #191a23;
+  padding: 44px;
+  border-radius: 40px;
+}
+
+/* Individual Case Study Card */
+.case-study {
+  flex: 1;
+  background: transparent;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  padding: 25px;
+  transition: transform 0.3s ease;
+  height: auto;
+  padding: 5px;
+  
+}
+.case-study::before{
+
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 200px;
+  background-color: #9c9898;
+  margin-left: 352px;
+  border-radius: 6px;
+  margin-top: -7px;
+  
+}
+
+.case-study:hover {
+  transform: translateY(-5px);
+}
+
+
+.case-study p {
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  text-align: start;
+  font-size: 15px;
+  color: #fff;
+}
+
+.cta-button {
+  display: inline-block;
+ 
+}
+
+.cta-button:hover {
+  
+}
+    /* Carousel Indicators */
+    .carousel-indicators {
+      display: none;
+      text-align: center;
+      margin-top: -70px;
+  }
+  
+  .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+  }
+  
+  .dot {
+      width: 8px;
+      height: 8px;
+      background-color: #ccc;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+  }
+  
+  .dot.active {
+      background-color: #3498db;
+  }
+
+
+/* ///////////////////////////////// */
+
+
+/* ///////////////////////////expandables////////////////// */
+
+.container-xpnd {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2px;
+}
+
+
+/* Section Styles */
+.expandable-section {
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000;
+  background-color: #f3f3f3;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 30px;
+  min-height: 20vh;
+
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.section-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* .section-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.section-image img {
+  width: 70%;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: none;
+}
+
+.section-button {
+  background-color: #000;
+  color: white;
+  border: 2px solid #fff;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-button:hover {
+  background-color: #e8f4fc;
+}
+
+.section-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.section-button .collapse-icon {
+  display: none;
+}
+
+.section-button .expand-icon {
+  display: block;
+}
+
+.expandable-section.expanded .section-button .collapse-icon {
+  display: block;
+}
+
+.expandable-section.expanded .section-button .expand-icon {
+  display: none;
+}
+
+/* Content Area */
+.section-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 20px;
+}
+
+/* Expanded State */
+.expandable-section.expanded {
+  background-color: #b9ff66;
+}
+
+.expandable-section.expanded .section-content {
+  max-height: 500px;
+  padding: 0 20px 20px;
+}
+.expandable-section.expanded .section-content::before{
+  position: absolute;
+  content: '';
+  height: 2.5px;
+  min-width: 61.6%;
+  border-radius: 11px;
+  margin-top: -11px;
+  background: #191a23;
+}
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////media queriesss------------------- */
+
+  
+@media screen and (max-width:1024px) {
+  .case-study::before{
+    display: none;
+  }
+  
+}
 
 
 
@@ -308,11 +548,77 @@ font-size: larger;
 
 .small-section {
   flex-direction: column;
+  padding: 16px;
+  height: auto;
 }
 
 .content-right {
   display: none;
 }
-
-
+.content-left h2{
+  font: size 1.3re; ;
 }
+
+
+.case-studies {
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  position: relative;
+}
+
+.case-study {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: none;
+  height: auto;
+}
+
+.case-study.active {
+  display: block;
+}
+
+.carousel-nav {
+  display: block;
+}
+
+.section-image {
+  display: none;
+}
+
+.section-title {
+  display: block;
+}
+
+.section-button {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.section-header {
+  padding: 15px;
+}
+
+.section-button {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+}
+
+.section-button img {
+  width: 18px;
+  height: 18px;
+}
+.expandable-section{
+  min-height: 10vh;
+}
+}
+
+
+
+
+
+
